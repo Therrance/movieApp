@@ -22,7 +22,7 @@ angular.module('movieApp.controllers', []).controller('MovieListController', fun
             $state.go('movies'); // on success go back to home i.e. movies state.
         });
     };
-}).conteroller('MovieEditController', function($scope, $state, $stateParams, Movie) {
+}).controller('MovieEditController', function($scope, $state, $stateParams, Movie) {
     $scope.updateMovie = function() { //Update the edited movie. Issues a PUT to /api/movies/:id
         $scope.movie.$update(function() {
             $state.go('movies'); // on success go back to home i.e. movies state
