@@ -2,9 +2,12 @@
 
 angular.module('movieApp.controllers', []).controller('MovieListController', function($scope, $state, popupService, $window, Movie) {
     $scope.movies = Movie.query(); //fetch all movies. GET to /api/movies/
+    console.log('!!!');
 
-    $scope.deleteMove = function(movie) { //delete a movie. DELETE to /api/movies/:id
+    $scope.deleteMovie = function(movie) { //delete a movie. DELETE to /api/movies/:id
         if (popupService.showPopup('Really delete this?')) {
+                console.log('movie: ', movie);
+
             movie.$delete(function() {
                 $window.location.href = ''; //redirect to home
             });

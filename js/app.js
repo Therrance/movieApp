@@ -15,11 +15,13 @@ angular.module('movieApp').config(function($stateProvider) {
         url: '/movies/new',
         templateUrl: 'partials/movie-add.html',
         controller: 'MovieCreateController'
-    }).state('EditMovie', { //state for updating a movie
+    }).state('editMovie', { //state for updating a movie
         url: '/movies/:id/edit',
-        templateUrl: 'partials/movies-edit.html',
+        templateUrl: 'partials/movie-edit.html',
         controller: 'MovieEditController'
     });
-}).run(function($state) {
+}).config(['$qProvider', function($qProvider) {
+    $qProvider.errorOnUnhandledRejections(false);
+}]).run(function($state) {
     $state.go('movies'); //make a transition to movies state when app starts
 });

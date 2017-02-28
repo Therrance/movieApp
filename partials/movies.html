@@ -9,7 +9,7 @@
         <td>{{ movie.title }}</td>
         <td>
             <a ui-sref="viewMovie({id:movie._id})" class="btn btn-primary">View</a>
-            <a ui-sref="deleteMovie({movie})" class="btn btn-danger">Delete</a>
+            <a ng-click="deleteMovie({movie})" class="btn btn-danger">Delete</a>
         </td>
     </tr>
 </table>
